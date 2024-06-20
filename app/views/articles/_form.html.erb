@@ -1,7 +1,7 @@
 
 <%= form_with model: article do |form| %>
   <div>
-    <%= form.label :title %><br>
+    <%= form.label :"Название" %><br>
     <%= form.text_field :title %>
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
@@ -9,7 +9,7 @@
   </div>
 
   <div>
-    <%= form.label :body %><br>
+    <%= form.label :"Текст" %><br>
     <%= form.text_area :body %><br>
     <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
@@ -19,12 +19,13 @@
 
 
   <div>
-    <%= form.label :status %><br>
+    <%= form.label :"статус" %><br>
     <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
   </div>
 
 
   <div>
+    <br>
     <%= form.submit %>
   </div>
 <% end %>
